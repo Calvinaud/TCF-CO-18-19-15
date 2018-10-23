@@ -6,15 +6,25 @@ public class Recipe {
 
 	private String name;
 	private String dough;
-	private String[] topping;
 	private String flavour;
 	private String mixed;
 	private String cooking;
 	private float price;
-	Collection<Product> product;
+	private String[] topping;
+	ArrayList<Product> product;
+
+	public Recipe(String name, String dough, String flavour, String mixed, String cooking, float price, String[] topping){
+		this.name = name;
+		this.dough = dough;
+		this.flavour = flavour;
+		this.mixed = mixed;
+		this.cooking = cooking;
+		this.price = price;
+		this.topping = topping;
+	}
 
 	public float getPrice() {
-		throw new UnsupportedOperationException();
+		return price;
 	}
 
 }

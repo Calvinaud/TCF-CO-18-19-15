@@ -28,5 +28,8 @@ hs_err_pid*
 .classpath
 .project
 
+.iml
+.idea
+
 # Logging
 *.log
