@@ -19,8 +19,12 @@ public class Shop {
 		throw new UnsupportedOperationException();
 	}
 
+	public void setTax(float tax){
+		this.tax = tax;
+	}
+
 	public float getTax() {
-		throw new UnsupportedOperationException();
+		return tax;
 	}
 
 }
