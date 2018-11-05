@@ -51,4 +51,8 @@ public class Command {
 
 	}
 
+
+	public void setShop(Shop shop) {
+	}
+
 }

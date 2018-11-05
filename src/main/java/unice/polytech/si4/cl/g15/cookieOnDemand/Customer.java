@@ -24,4 +24,9 @@ public class Customer {
 		throw new UnsupportedOperationException();
 	}
 
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
