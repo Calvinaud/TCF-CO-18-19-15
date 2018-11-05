@@ -1,7 +1,8 @@
 package unice.polytech.si4.cl.g15.cookieOnDemand;
 
-import java.time.LocalTime;
 import java.util.*;
+
+import org.joda.time.LocalTime;
 
 public class CoD {
 	private static CoD instance;
@@ -36,7 +37,7 @@ public class CoD {
 		this.shop = new ArrayList<Shop>();
 		this.recipe = new ArrayList<Recipe>();
 		
-		Shop shop = new Shop(0, "12 rue des lucioles", 20, "0123456789", LocalTime.NOON, LocalTime.MIDNIGHT, new Manager());
+		Shop shop = new Shop(0, "12 rue des lucioles", 20, "0123456789", LocalTime.MIDNIGHT, LocalTime.MIDNIGHT, new Manager());
 		shop.changeMonthlyRecipe("Special", "X", "X", "X", "X", 2, "X");
 		
 		this.shop.add(shop);

@@ -20,13 +20,13 @@ public class CommandTest {
     @Before
     public void setUp() throws Exception {
         customer = new Customer();
-        shop = new Shop("Olympe", 2, 118218, new LocalTime(), new LocalTime(), new Manager());;
+        shop = new Shop(0, "Olympe", 2, "0123456789", new LocalTime(), new LocalTime(), new Manager());
         String[] topping = {"topping1", "topping2"};
         recipe = new Recipe("name", "dough", "flavour", "mixed", "cooking", (float) 2.98, topping);
         recipe1 = new Recipe("2", "dough", "flavour", "mixed", "cooking", (float) 3.99, topping);
         command = new Command(customer, shop);
-        product = new Product(recipe, command, 3);
-        product1 = new Product(recipe1, command, 1);
+        product = new Product(recipe, 3);
+        product1 = new Product(recipe1, 1);
         shop.setTax(0.2f);
 
     }
@@ -53,8 +53,7 @@ public class CommandTest {
         ArrayList<Product> result = new ArrayList<Product>();
         result.add(product);
         result.add(product1);
-        Product[] p = {product,product1};
-        command.setProducts(p);
+        command.setProducts(result);
         assertEquals(result, command.getProducts());
     }
 
@@ -85,15 +84,19 @@ public class CommandTest {
 
     @Test
     public void getPriceExclTaxes() {
-        Product[] p = {product,product1};
-        command.setProducts(p);
+    	ArrayList<Product> result = new ArrayList<Product>();
+        result.add(product);
+        result.add(product1);
+        command.setProducts(result);
         assertEquals((float) 3*2.98 + 3.99, command.getPriceExclTaxes(), 0.001);
     }
 
     @Test
     public void getPriceInclTaxes() {
-        Product[] p = {product,product1};
-        command.setProducts(p);
+    	ArrayList<Product> result = new ArrayList<Product>();
+        result.add(product);
+        result.add(product1);
+        command.setProducts(result);
         assertEquals((float) 1.2 * (3*2.98 + 3.99), command.getPriceInclTaxes(), 0.001);
     }
 }
