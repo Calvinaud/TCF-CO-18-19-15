@@ -1,5 +1,6 @@
 package unice.polytech.si4.cl.g15.cookieOnDemand;
 
+import java.time.LocalTime;
 import java.util.*;
 
 public class CoD {
@@ -8,7 +9,7 @@ public class CoD {
 	private ArrayList<Customer> customer;
 	private ArrayList<Shop> shop;
 	private ArrayList<Command> command;
-	
+	private ArrayList<Recipe> recipe;
 	private Command currentCommand;
 
 	/**
@@ -26,6 +27,27 @@ public class CoD {
 			instance = new CoD();
 		}
 		return instance;
+	}
+	
+	/**
+	 * Classe d'initialisation intégrant des données de test
+	 */
+	public void init() {
+		this.shop = new ArrayList<Shop>();
+		this.recipe = new ArrayList<Recipe>();
+		
+		Shop shop = new Shop(0, "12 rue des lucioles", 20, "0123456789", LocalTime.NOON, LocalTime.MIDNIGHT, new Manager());
+		shop.changeMonthlyRecipe("Special", "X", "X", "X", "X", 2, "X");
+		
+		this.shop.add(shop);
+		
+		this.recipe.add(new Recipe("Recipe 1", "X", "X", "X", "X", 2, "X"));
+		this.recipe.add(new Recipe("Recipe 2", "X", "X", "X", "X", 2, "X"));
+		this.recipe.add(new Recipe("Recipe 3", "X", "X", "X", "X", 2, "X"));
+		this.recipe.add(new Recipe("Recipe 4", "X", "X", "X", "X", 2, "X"));
+		this.recipe.add(new Recipe("Recipe 5", "X", "X", "X", "X", 2, "X"));
+		this.recipe.add(new Recipe("Recipe 6", "X", "X", "X", "X", 2, "X"));
+		this.recipe.add(new Recipe("Recipe 7", "X", "X", "X", "X", 2, "X"));
 	}
 	
 	/**
@@ -51,7 +73,7 @@ public class CoD {
 	 * Choix d'un procuit
 	 * @param product
 	 */
-	public void chooseProduct(Product[] product) {
+	public void chooseProduct(ArrayList<Product> product) {
 		if(currentCommand != null) {
 			currentCommand.setProducts(product);
 		}
@@ -113,7 +135,7 @@ public class CoD {
 	 * @return The collection of recipe currently on the menu
 	 */
 	public ArrayList<Recipe> getMenu() {
-		return null;
+		return this.recipe;
 	}
 
 	/**

@@ -3,7 +3,6 @@ package unice.polytech.si4.cl.g15.cookieOnDemand;
 import java.util.*;
 
 public class Recipe {
-
 	private String name;
 	private String dough;
 	private String flavour;

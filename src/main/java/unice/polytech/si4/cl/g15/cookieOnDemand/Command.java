@@ -50,9 +50,9 @@ public class Command {
 	 * customer chooses products
 	 * @param product
 	 */
-	public void setProducts(Product[] product) {
-		for (int i = 0; i < product.length; i++){
-			this.product.add(product[i]);
+	public void setProducts(ArrayList<Product> product) {
+		for (int i = 0; i < product.size(); i++){
+			this.product.add(product.get(i));
 		}
 	}
 

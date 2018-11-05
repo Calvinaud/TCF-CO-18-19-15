@@ -4,17 +4,18 @@ import java.time.LocalTime;
 import java.util.*;
 
 public class Shop {
-
+	private int id;
 	private Recipe monthlyRecipe;
 	private List<Manager> manager;
 	private float tax;
 	private LocalTime openTime;
 	private LocalTime closeTime;
 	private String address;
-	private int phone;
+	private String phone;
 	private List<Command> commands;
 
-	public Shop(String adress, float tax, int phone, LocalTime openTime, LocalTime closeTime, Manager... manager){
+	public Shop(int id, String adress, float tax, String phone, LocalTime openTime, LocalTime closeTime, Manager... manager){
+		this.id = id;
 		this.address = adress;
 	    this.tax = tax;
 		this.phone = phone;
@@ -72,8 +73,7 @@ public class Shop {
 	}
 
 	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return id;
 	}
 
 }
