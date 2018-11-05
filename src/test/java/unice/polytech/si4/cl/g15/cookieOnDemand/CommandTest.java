@@ -1,5 +1,6 @@
 package unice.polytech.si4.cl.g15.cookieOnDemand;
 
+import org.joda.time.LocalTime;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,7 +20,7 @@ public class CommandTest {
     @Before
     public void setUp() throws Exception {
         customer = new Customer();
-        shop = new Shop();
+        shop = new Shop("Olympe", 2, 118218, new LocalTime(), new LocalTime(), new Manager());;
         String[] topping = {"topping1", "topping2"};
         recipe = new Recipe("name", "dough", "flavour", "mixed", "cooking", (float) 2.98, topping);
         recipe1 = new Recipe("2", "dough", "flavour", "mixed", "cooking", (float) 3.99, topping);

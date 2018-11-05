@@ -23,6 +23,10 @@ public class Recipe {
 		this.topping = topping;
 	}
 
+	/**
+	 * Return the price without taxes of the recipe
+	 * @return the price
+	 */
 	public float getPrice() {
 		return price;
 	}
