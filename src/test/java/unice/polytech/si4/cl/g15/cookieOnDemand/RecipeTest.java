@@ -21,5 +21,4 @@ public class RecipeTest {
     public void getPrice() throws Exception {
         assertEquals(price,recipe.getPrice());
     }
-
 }

@@ -13,7 +13,7 @@ public class Recipe {
 	private String[] topping;
 	ArrayList<Product> product;
 
-	public Recipe(String name, String dough, String flavour, String mixed, String cooking, float price, String[] topping){
+	public Recipe(String name, String dough, String flavour, String mixed, String cooking, float price, String... topping){
 		this.name = name;
 		this.dough = dough;
 		this.flavour = flavour;
@@ -23,6 +23,10 @@ public class Recipe {
 		this.topping = topping;
 	}
 
+	/**
+	 * Return the price without taxes of the recipe
+	 * @return the price
+	 */
 	public float getPrice() {
 		return price;
 	}
